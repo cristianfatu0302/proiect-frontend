@@ -1,7 +1,7 @@
 import { getFormData } from "myFormsModule";
 
 const formular = document.querySelector("#proiectForm");
-
+const adresa = '3.68.95.217';
 formular.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -16,7 +16,7 @@ formular.addEventListener("submit", async (event) => {
         }
     }
     console.log(JSON.stringify(proiect));
-    await fetch("http://localhost:8080/proiect/add", {
+    await fetch("http://"+adresa+":8080/proiect/add", {
         method: "POST",
         body: JSON.stringify(data),
         headers: new Headers({

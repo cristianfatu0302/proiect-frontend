@@ -4,7 +4,7 @@ const angajatiTable = document.querySelector("#angajatiTable tbody");
 
 console.log(angajatiTable);
 
-fetch("http://localhost:8080/angajati/all", { method: "GET" })
+fetch("http://"+adresa+":8080/angajati/all", { method: "GET" })
   .then((response) => {
     if (response.ok) {
       return response.json();

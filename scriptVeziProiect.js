@@ -1,10 +1,10 @@
 import { createProiectRow } from "myFormsModule";
 
 const proiecteTable = document.querySelector("#proiecteTable");
-
+const adresa = '3.68.95.217';
 console.log(proiecteTable);
 
-fetch("http://localhost:8080/proiect/all", {method: "GET"})
+fetch("http://"+adresa+":8080/proiect/all", {method: "GET"})
     .then( response => {
         if(response.ok){
             return response.json();

@@ -1,9 +1,10 @@
 import { getFormData } from "myFormsModule";
 
+const adresa = '3.68.95.217';
 const formular = document.querySelector("#angajatForm");
 const proiectDropdown = document.querySelector("#proiectDropdown");
 
-await fetch("http://localhost:8080/proiect/all", { method: "GET" })
+await fetch("http://"+adresa+":8080/proiect/all", { method: "GET" })
   .then((response) => {
     if (response.ok) {
       return response.json();
@@ -37,7 +38,7 @@ formular.addEventListener("submit", async (event) => {
     }
   }
   console.log(JSON.stringify(angajat));
-  await fetch("http://localhost:8080/angajati/add", {
+  await fetch("http://"+adresa+":8080/angajati/add", {
     method: "POST",
     body: JSON.stringify(angajat),
     headers: new Headers({

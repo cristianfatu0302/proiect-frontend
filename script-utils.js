@@ -1,3 +1,5 @@
+const adresa = '3.68.95.217';
+
 export function getFormData(formular) {
   const obj = {};
   for (let element of formular.elements) {
@@ -30,7 +32,7 @@ export function createAngajatRow(angajat) {
   emailLink.textContent = angajat.email;
   emailCell.appendChild(emailLink);
 
-  fetch(`http://localhost:8080/proiect/${angajat.proiectID}`, { method: "GET" })
+  fetch(`http://`+adresa+`:8080/proiect/${angajat.proiectID}`, { method: "GET" })
     .then((response) => {
       if (response.ok) {
         return response.json();
